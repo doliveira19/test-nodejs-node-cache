@@ -4,23 +4,16 @@
 
 - Node
 - Typescript
-- Redis
 
 ## Requisitos
 
 - Node
-- Redis
-
-## Criar conteiner Redis
-
-docker run --name redis -p 6379:6379 -d redis
 
 ## Como usar a API
 
 1. Clonar repositório;
 2. Instalar dependências: `$ npm install`;
-3. Iniciar Redis (container);
-4. Iniciar a aplicação: `$ npm run dev`;
+3. Iniciar a aplicação: `$ npm run dev`;
 
 ## OBS
 
