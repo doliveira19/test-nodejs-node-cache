@@ -1,0 +1,47 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API GB Teste",
+    "description": "Documentação da API contendo CRUD de Produtos",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "API de testes"
+    }
+  ],
+  "tags": [
+    {
+      "name": "produto",
+      "description": "CRUD de Produtos"
+    },
+    {
+      "name": "auth",
+      "description": "Login"
+    }
+  ],
+  "paths": {
+    "/auth/login": {
+      "$ref": "./paths/auth.json"
+    },
+    "/produto": {
+      "$ref": "./paths/produto.json"
+    },
+    "/produto/{sku}": {
+      "$ref": "./paths/produto_sku.json"
+    }
+  },
+  "components": {
+    "schemas": {
+      "$ref": "schemas/index.json"
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

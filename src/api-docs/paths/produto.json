@@ -1,0 +1,89 @@
+{
+  "post": {
+    "summary": "Criar Produto",
+    "description": "Realiza o cadastro de um produto",
+    "tags": [
+      "produto"
+    ],
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../schemas/index.json#/Produto"
+          },
+          "example": {
+            "sku": 43264,
+            "name": "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g",
+            "inventory": {
+              "warehouses": [
+                {
+                  "locality": "SP",
+                  "quantity": 12,
+                  "type": "ECOMMERCE"
+                },
+                {
+                  "locality": "MOEMA",
+                  "quantity": 3,
+                  "type": "PHYSICAL_STORE"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Retorna o Produto criado",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/index.json#/Produto"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Bad Request"
+      },
+      "401": {
+        "description": "Unauthorized"
+      }
+    }
+  },
+  "get": {
+    "summary": "Retornar todos os Produtos",
+    "description": "Retorna todos os Produtos",
+    "tags": [
+      "produto"
+    ],
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Retorna um array com todos os Produtos",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/index.json#/Produto"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Bad Request"
+      },
+      "401": {
+        "description": "Unauthorized"
+      }
+    }
+  }
+}

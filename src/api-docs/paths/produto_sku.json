@@ -1,0 +1,142 @@
+{
+  "get": {
+    "summary": "Retornar um Produto",
+    "description": "Retorna um Produto",
+    "tags": [
+      "produto"
+    ],
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
+    "parameters": [
+      {
+        "name": "sku",
+        "in": "path",
+        "description": "sku do Produto",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Retorna o Produto",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/index.json#/Produto"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Bad Request"
+      },
+      "401": {
+        "description": "Unauthorized"
+      }
+    }
+  },
+  "put": {
+    "summary": "Atualizar um Produto",
+    "description": "Atualiza um Produto",
+    "tags": [
+      "produto"
+    ],
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
+    "parameters": [
+      {
+        "name": "sku",
+        "in": "path",
+        "description": "sku do Produto",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        }
+      }
+    ],
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../schemas/index.json#/Produto"
+          },
+          "example": {
+            "sku": 43264,
+            "name": "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g",
+            "inventory": {
+              "warehouses": [
+                {
+                  "locality": "SP",
+                  "quantity": 12,
+                  "type": "ECOMMERCE"
+                },
+                {
+                  "locality": "MOEMA",
+                  "quantity": 3,
+                  "type": "PHYSICAL_STORE"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Retorna o Produto atualizado",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/index.json#/Produto"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Bad Request"
+      },
+      "401": {
+        "description": "Unauthorized"
+      }
+    }
+  },
+  "delete": {
+    "summary": "Deletar um Produto",
+    "description": "Deleta um Produto",
+    "tags": [
+      "produto"
+    ],
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
+    "parameters": [
+      {
+        "name": "sku",
+        "in": "path",
+        "description": "sku do Produto",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        }
+      }
+    ],
+    "responses": {
+      "400": {
+        "description": "Bad Request"
+      },
+      "401": {
+        "description": "Unauthorized"
+      }
+    }
+  }
+}
